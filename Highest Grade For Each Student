@@ -51,11 +51,11 @@ ORDER BY student_id
 OR
 
 WITH cte AS
-(SELECT *,RANK() OVER(PARTITION BY student_id 
+(SELECT *,ROW_NUMBER() OVER(PARTITION BY student_id 
 ORDER BY grade DESC,course_id) AS rnk
 FROM Enrollments)
 
 SELECT student_id,course_id,grade
 FROM cte
-WHERE rnk=1
+WHERE rn=1
 ORDER BY student_id
