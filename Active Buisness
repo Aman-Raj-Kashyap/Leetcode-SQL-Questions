@@ -1,9 +1,0 @@
-WITH cte AS
-(SELECT *,AVG(occurences) OVER(PARTITION BY event_type) AS avg_occ
-FROM Events)
-
-SELECT buisness_id
-FROM cte
-WHERE occurences > avg_occ
-GROUP BY buisness_id
-HAVING COUNT(event_type)>1
