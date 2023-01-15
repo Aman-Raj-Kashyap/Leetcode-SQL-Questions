@@ -31,7 +31,7 @@
 
 -- average_price should be rounded to 2 decimal places.
 
--- The query result format is in the following example:
+-- The query result format is in the following examples:
 
 -- Prices table:
 -- +------------+------------+------------+--------+
